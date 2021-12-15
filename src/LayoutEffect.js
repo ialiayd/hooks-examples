@@ -9,7 +9,8 @@ const LayoutEffectComponent = () => {
     setWidth(el.current.clientWidth);
     setHeight(el.current.clientHeight);
   });
-
+  // use effect gets scheculed
+  // use layout effect runs immediately. if we need milliseconds in guarantie. we need this
   return (
     <div>
       <h1>useLayoutEffect Example</h1>

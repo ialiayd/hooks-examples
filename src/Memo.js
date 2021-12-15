@@ -12,6 +12,7 @@ const MemoComponent = () => {
   const [num, setNum] = useState(1);
   const [isGreen, setIsGreen] = useState(true);
   const fib = useMemo(() => fibonacci(num), [num]);
+  // whenever num changes compute or return the computed and memoized value
 
   return (
     <div>
@@ -24,7 +25,9 @@ const MemoComponent = () => {
       <h2>
         Fibonacci of {num} is {fib}
       </h2>
-      <button onClick={() => setNum(num + 1)}>➕</button>
+      <button onClick={() => setNum(num + 1)}>
+        <span role="img">➕</span>
+      </button>
     </div>
   );
 };

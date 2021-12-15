@@ -11,7 +11,7 @@ const ExpensiveComputationComponent = memo(({ compute, count }) => {
 
 const CallbackComponent = () => {
   const [time, setTime] = useState(new Date());
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(40);
   useEffect(() => {
     const timer = setTimeout(() => setTime(new Date()), 1000);
     return () => clearTimeout(timer);
@@ -31,6 +31,7 @@ const CallbackComponent = () => {
       <button onClick={() => setCount(count + 1)}>
         current count: {count}
       </button>
+      {/*usecallback gives the same fibonacci function every single time */}
       <ExpensiveComputationComponent
         compute={useCallback(fibonacci, [])}
         count={count}
